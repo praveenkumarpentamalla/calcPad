@@ -1,0 +1,18 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        # Inlined at build time (canonical URLs, sitemap, JSON-LD). Set your real domain.
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+    image: free-creator-finance-tools:latest
+    container_name: fcft-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s

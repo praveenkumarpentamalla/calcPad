@@ -1,0 +1,3 @@
+import type { Metadata } from "next"; import StaticPage from "@/components/StaticPage";
+export const metadata: Metadata = { title: "Privacy Policy", alternates: { canonical: "/privacy-policy" } };
+export default function Page() { return <StaticPage title="Privacy Policy" paras={["Calculator inputs are processed in your browser and are not sent to our servers.","We may use cookies and third-party advertising (such as Google AdSense) to show ads. You can manage ad personalisation in your Google Ad Settings. UK/EU visitors will be asked for consent where required.","Replace this draft with text reviewed by a qualified professional."]} />; }
