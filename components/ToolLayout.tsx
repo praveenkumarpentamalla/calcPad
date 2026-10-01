@@ -10,7 +10,7 @@ export default function ToolLayout({ tool, sections }: { tool: Tool; sections: S
     { "@type": "BreadcrumbList", itemListElement: [["Home", SITE.url], ["Tools", `${SITE.url}/#tools`], [tool.name, url]].map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) }] };
   return (<div className="mx-auto max-w-6xl px-4 py-8"><JsonLd data={ld} />
     <nav aria-label="Breadcrumb" className="mb-4 text-sm text-slate-500"><Link href="/">Home</Link> / <Link href="/#tools">Tools</Link> / {tool.name}</nav>
-    <h1 className="text-3xl font-bold">{tool.name}</h1><p className="mt-2 text-slate-600 dark:text-slate-300">{tool.description}</p>
+    <h1 className="text-3xl font-bold">{tool.name}</h1><p className="mt-2 text-muted">{tool.description}</p>
     {/* ADSENSE_TOP_BANNER */}<AdSlot name="ADSENSE_TOP_BANNER" />
     <div className="grid gap-8 lg:grid-cols-[1fr_300px]"><div>
       {/* ADSENSE_ABOVE_TOOL */}<AdSlot name="ADSENSE_ABOVE_TOOL" />
